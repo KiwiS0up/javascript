@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 13</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        div {
+            background-color: rgba(255, 0, 0, 0.733);
+            width: 300px;
+            height: 200px;
+            color: #000;
+            font-size: 70px;
+            padding-top: 40px;
+            padding-left: 20px;
+        }
+
+        div:hover {
+            background-color: #85ae72;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 4 <br> Mouse over/out</h2>
+    <!-- Você pode mudar as cores e colocar outra coisa escrita, o original é Fluminense -->
+    <div onmouseover="campeao(this);" onmouseout="campeao2(this);">
+        Flamengo
+    </div>
+    <script>
+        function campeao(obj) {
+            obj.innerHTML = "Aqui é Flamengo";
+            obj.style.fontSize = "60px";
+            obj.style.paddingTop = "20px";
+        }
+
+        function campeao2(obj) {
+            obj.innerHTML = "Mengoo";
+            obj.style.fontSize = "70px";
+            obj.style.paddingTop = "40px";
+        }
+    </script>
+</body>
+</html>

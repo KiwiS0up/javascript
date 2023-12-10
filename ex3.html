@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 12</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            color: #573e54;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="text"] {
+            width: 240px;
+            height: 25px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        input[type="text"]:focus {
+            outline: 3px solid rgba(65, 105, 225, 0.795);
+        }
+
+        input[type="button"] {
+            background-color: #65a9e1;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 6px;
+            width: 100px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 3</h2>
+    <p>Alterar o texto do input</p>
+    <label for="caixa">Nome:</label>
+    <input type="text" name="nome" id="caixa" placeholder="Digite seu nome" onchange="atualizarTexto();">
+    <br>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" onchange="atualizarEmail();">
+    <br>
+    <br>
+    <input type="button" value="Limpar" onclick="limpar()">
+    <script>
+        function atualizarTexto() {
+            const texto = document.getElementById("caixa");
+            texto.value = texto.value.toUpperCase();
+        }
+
+        function atualizarEmail() {
+            const email = document.getElementById("email");
+            email.value = email.value.toLowerCase();
+        }
+
+        function limpar() {
+            document.getElementById("caixa").value = "";
+            document.getElementById("email").value = "";
+        }
+    </script>
+</body>
+</html>

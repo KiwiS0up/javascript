@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 17</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            background: rgba(26, 172, 152, 0.856);
+            color: white;
+            padding: 20px;
+            margin-left: 20%;
+            margin-right: 20%;
+            border-radius: 10px;
+            border: 3px solid #259191;
+            box-shadow: 4px 4px rgba(35, 150, 69, 0.658);
+        }
+
+        input[type="text"] {
+            width: 240px;
+            height: 25px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        input[type="text"]:focus {
+            outline: 3px solid royalblue;
+        }
+
+        button {
+            background-color: royalblue;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        #dados h3 {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 8</h2>
+    <h3>Agenda</h3>
+    <div>
+        <label for="nome">Nome:</label><br>
+        <input name="nome" id="nome" type="text"><br>
+        <label for="celular">Celular:</label><br>
+        <input name="celular" id="celular" type="text"><br>
+        <button id="cadastrar" type="submit" onclick="cadastrar();">Cadastrar</button>
+    </div> <br><br>
+    <div id="dados">
+        <h2>Nome - Celular</h2>
+    </div>
+    <script>
+        function cadastrar() {
+            const n = document.getElementById('nome').value;
+            const c = document.getElementById('celular').value;
+            const d = document.getElementById('dados');
+            const h3 = document.createElement("h3");
+            h3.innerHTML = n + " - " + c;
+            d.appendChild(h3);
+            document.getElementById("nome").value = "";
+            document.getElementById("celular").value = "";
+        }
+    </script>
+</body>
+</html>

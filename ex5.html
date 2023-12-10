@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 14</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 25px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            color: #573e54;
+        }
+
+        input[type="checkbox"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            font-size: 20px;
+            display: none;
+            background-color: #65a9e1;
+            color: white;
+            border-radius: 5px;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 5</h2>
+    <label for="caixa">Adicionar botão</label>
+    <input type="checkbox" onclick="adicionar();" id="caixa"><br>
+    <button>Clique</button>
+    <script>
+        function adicionar() {
+            const marcado = document.getElementById("caixa").checked;
+            const botao = document.getElementsByTagName("button")[0];
+
+            botao.addEventListener("click", function () {
+                const divi = document.createElement("div");
+                const imagem = document.createElement("img");
+                imagem.src = "why-are-cats-cute.jpg";
+                divi.appendChild(imagem);
+                document.body.appendChild(divi);
+
+                const im = document.getElementsByTagName("img")[0];
+                im.addEventListener("click", function () {
+                    divi.removeChild(im);
+                });
+            });
+
+            if (marcado)
+                botao.style.display = "inline";
+            else
+                botao.style.display = "none";
+        }
+    </script>
+</body>
+</html>

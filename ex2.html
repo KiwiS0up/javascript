@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 11</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        button {
+            padding: 15px;
+            border-radius: 20px;
+            color: #323030;
+            background: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="cute-cat-photos-1593441022.jpg" id="imagem" width="500" alt="">
+    <br>
+    <button id="botao" onclick="trocar()">Clique aqui</button>
+
+    <script>
+        let modo = 0;
+
+        function trocar() {
+            if (modo == 0) {
+                // Colocar outra imagem aqui
+                document.getElementById("imagem").src= "jujlcsz893w51.jpg" ;
+                document.getElementById("botao").innerHTML = "Clique mais uma vez";
+                modo = 1;
+            } else {
+                // Colocar a primeira imagem de novo
+                document.getElementById("imagem").src = "cute-cat-photos-1593441022.jpg";
+                document.getElementById("botao").innerHTML = "Clique outra vez";
+                modo = 0;
+            }
+        }
+    </script>
+</body>
+</html>

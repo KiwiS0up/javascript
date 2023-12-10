@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 16</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            background: rgba(26, 172, 152, 0.856);
+            color: white;
+            padding: 20px;
+            margin-left: 20%;
+            margin-right: 20%;
+            border-radius: 10px;
+            border: 3px solid #259191;
+            box-shadow: 4px 4px rgba(35, 150, 69, 0.658);
+        }
+
+        input[type="text"] {
+            width: 240px;
+            height: 25px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        input[type="text"]:focus {
+            outline: 3px solid royalblue;
+        }
+
+        button {
+            background-color: royalblue;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 7</h2>
+    <h3>Verificação da idade</h3>
+    <div>
+        <label for="idade">Idade:</label><br>
+        <input name="idade" id="idade" type="text"><br>
+        <p id="msg"></p>
+        <button type="submit" onclick="validar();">Enviar</button>
+    </div>
+    <script>
+        function validar() {
+            const id = document.getElementById("idade").value;
+            let texto;
+            if (isNaN(id) || id < 1 || id > 130)
+                texto = "Idade inválida!";
+            else
+                texto = "Idade OK!";
+            document.getElementById("msg").innerHTML = texto;
+        }
+    </script>
+</body>
+</html>

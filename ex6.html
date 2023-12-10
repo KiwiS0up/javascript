@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 15</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+            background: rgba(26, 172, 152, 0.856);
+            color: white;
+            padding: 20px;
+            margin-left: 20%;
+            margin-right: 20%;
+            border-radius: 10px;
+            border: 3px solid #259191;
+            box-shadow: 4px 4px rgba(35, 150, 69, 0.658);
+        }
+
+        input[type="text"] {
+            width: 240px;
+            height: 25px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        input[type="text"]:focus {
+            outline: 3px solid rgba(65, 105, 225, 0.795);
+        }
+
+        input[type="submit"] {
+            background-color: rgba(65, 105, 225, 0.795);
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exemplo 6</h2>
+    <h3>Validação de formulário</h3>
+    <form name="form" action="cadastro.php" onsubmit="return validarFormulario();" method="post">
+        <label for="nome">Nome:</label><br>
+        <input name="nome" id="nome" type="text"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        function validarFormulario() {
+            let dados = document.forms["form"]["nome"].value;
+            if (dados === "") {
+                alert("Preencha o nome corretamente!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
